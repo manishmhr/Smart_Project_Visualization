@@ -1,9 +1,10 @@
 {
-  "name": "web_apia_assignment",
+  "name": "web_api_assignment",
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "development": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/manishmhr/Smart_Project_Visualization/issues"
   },
-  "homepage": "https://github.com/manishmhr/Smart_Project_Visualization#readme"
+  "homepage": "https://github.com/manishmhr/Smart_Project_Visualization#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
