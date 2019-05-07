@@ -1,18 +1,26 @@
-var usermodel = require('../models/UserModel');
+var usermodel = require('../models/UserModels');
 
-function registeruser () {
-    usermodel.User.create(
+
+function registerUser(){
+    usermodel.User.create({
+
+        firstName : 'Manish',
+
+        lastName:'Maharjan',
+
+    })
+
+        .then(function(result){
+            // console.log(result);
+        })
+        .catch(function(err)
         {
-            username: 'Manish',
-            password: 'manish',
-            email: 'manishmhr2@gmail.com'
-        })
-        .then(function (result) {
-            console.log(result);
-        })
-        .catch(function (err) {
             console.log(err);
-
         })
+
+//password : 'anu',
 }
-//registerUser();
+
+module.exports = {
+    registerUser
+}

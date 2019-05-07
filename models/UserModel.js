@@ -1,37 +1,53 @@
-var db = require('..configs/databaseconfig')
+var db = require('../configs/dbconfigs')
 
-const User = sequelize.define('user', {
-    // attributes
-    
-    id: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        autoIncrement: true,
-        primaryKey: true
-        
-    }
-    firstName: {
-        type: Sequelize.STRING,
-        allowNull: false
+const User = db.sequelize.define('user', {
+        // attributes
+        id:{
+            type:db.Sequelize.INTEGER,
+            allowNull:false,
+            autoIncrement:true,
+            primaryKey:true
+        },
+
+        firstName: {
+            type: db.Sequelize.STRING,
+            allowNull: false
+        },
+
+        lastName: {
+            type: db.Sequelize.STRING
+            allowNull: false
+        }
     },
-    lastName: {
-        type: Sequelize.STRING
-        // allowNull defaults to true
-    }
-}, {
-    // options
-    freezetableName: true,
-    tableName: 'my_users'
-});
 
-User.sync({force:true})
-.then(function (result) {
-    console.log(result);
-})
+    {
+        // options
 
-.catch(function (err) {
-    console.log(err)
-})
+        freezeTableName:true,
+        tableName:'my_users'
+    });
+
+
+User.sync({force:false})
+    .then(function(result)
+
+    {
+
+
+// console.log(result);
+
+    })
+    .catch(function(err){
+        console.log(err)
+    })
+
+
 module.exports = {
-    user
+    User
 }
+
+
+// password: {
+//    type: db.Sequelize.STRING,
+//    allowNull: false
+//  },
