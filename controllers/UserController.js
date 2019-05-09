@@ -17,8 +17,15 @@ function registerUser(){
         {
             console.log(err);
         })
+    
+}
 
-//password : 'anu',
+function registeruser(req,res,next){
+    usermodel.user.create({
+        usermodel : req.body.uesrname,
+        password: req.body.password,
+        address : req.body.address
+    })
 }
 
 module.exports = {
